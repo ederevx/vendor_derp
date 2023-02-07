@@ -200,6 +200,11 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     dalvik.vm.systemuicompilerfilter=speed
 
+ifneq ($(TARGET_BUILD_VARIANT),eng)
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    debug.sf.enable_transaction_tracing=false
+endif
+
 # Disable RescueParty due to high risk of data loss
 PRODUCT_PRODUCT_PROPERTIES += \
 	persist.sys.disable_rescue=true
