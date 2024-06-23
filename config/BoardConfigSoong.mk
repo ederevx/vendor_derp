@@ -49,7 +49,8 @@ SOONG_CONFIG_derpGlobalVars += \
     target_trust_usb_control_enable \
     target_trust_usb_control_disable \
     uses_oplus_camera \
-    uses_nothing_camera
+    uses_nothing_camera \
+    uses_gralloc1
 
 SOONG_CONFIG_NAMESPACES += derpNvidiaVars
 SOONG_CONFIG_derpNvidiaVars += \
@@ -75,6 +76,7 @@ SOONG_CONFIG_derpGlobalVars_gralloc_handle_has_reserved_size := $(TARGET_GRALLOC
 SOONG_CONFIG_derpGlobalVars_gralloc_handle_has_ubwcp_format := $(TARGET_GRALLOC_HANDLE_HAS_UBWCP_FORMAT)
 SOONG_CONFIG_derpGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
 SOONG_CONFIG_derpGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
+SOONG_CONFIG_derpGlobalVars_uses_gralloc1 := $(TARGET_USES_GRALLOC1)
 SOONG_CONFIG_derpNvidiaVars_uses_nvidia_enhancements := $(NV_ANDROID_FRAMEWORK_ENHANCEMENTS)
 SOONG_CONFIG_derpQcomVars_qti_vibrator_use_effect_stream := $(TARGET_QTI_VIBRATOR_USE_EFFECT_STREAM)
 SOONG_CONFIG_derpQcomVars_supports_extended_compress_format := $(AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT)
@@ -98,6 +100,7 @@ TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 TARGET_TRUST_USB_CONTROL_PATH ?= /proc/sys/kernel/deny_new_usb
 TARGET_TRUST_USB_CONTROL_ENABLE ?= 1
 TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
+TARGET_USES_GRALLOC1 ?= false
 
 # Soong value variables
 SOONG_CONFIG_derpGlobalVars_aapt_version_code := $(shell date -u +%Y%m%d)
